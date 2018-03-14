@@ -180,13 +180,12 @@ var AutoCompleteComponent = (function () {
         this.keyword = this.getLabel(selection);
         this.formValue = this.getFormValue(selection);
         var /** @type {?} */ that = this;
-        setTimeout(function () {
-            that.hideItemList();
-        }, 300);
         // emit selection event
         this.updateModel();
         if (this.hideListOnSelection) {
-            this.hideItemList();
+            setTimeout(function () {
+                that.hideItemList();
+            }, 300);
         }
         // emit selection event
         this.itemSelected.emit(selection);
