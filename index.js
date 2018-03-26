@@ -102,6 +102,7 @@ var AutoCompleteComponent = (function () {
      * @return {?}
      */
     AutoCompleteComponent.prototype.updateModel = function () {
+        this.formValue = this.keyword;
         this.onChangeCallback(this.formValue);
     };
     /**
@@ -155,7 +156,6 @@ var AutoCompleteComponent = (function () {
         }
         // emit event
         this.ionAutoInput.emit(this.keyword);
-        this.formValue = this.keyword;
     };
     /**
      * show item list
